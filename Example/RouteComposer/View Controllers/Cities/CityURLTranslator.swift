@@ -21,11 +21,11 @@ class CityURLTranslator: ExampleURLTranslator {
               let queryItems = urlComponents.queryItems,
               let cityItem = queryItems.first(where: { $0.name == "city" }),
               let cityValue = cityItem.value,
-              let cityId = Int(cityValue) else {
+              let cityID = Int(cityValue) else {
             return nil
         }
 
-        let cityDestination = CitiesConfiguration.cityDetail(cityId: cityId)
+        let cityDestination = CitiesConfiguration.cityDetail(cityID: cityID)
         return cityDestination.unwrapped()
     }
 

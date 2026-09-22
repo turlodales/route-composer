@@ -2106,39 +2106,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
-		0B93696798B0050ADEB3583A6F01EC24 /* Release */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = D5A370124C8F14171A14F988AEB9384B /* RouteComposer.release.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/RouteComposer/RouteComposer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RouteComposer/RouteComposer-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RouteComposer/RouteComposer.modulemap";
-				PRODUCT_MODULE_NAME = RouteComposer;
-				PRODUCT_NAME = RouteComposer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VALIDATE_PRODUCT = YES;
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Release;
-		};
 		1BA32EBBA9F5DE633A69504731F9A9C8 /* Release */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 9FA6DE42FB4CFA7FC395F6D90A8B617D /* Pods-RouteComposer_Example-RouteComposer_Tests.release.xcconfig */;
@@ -2174,38 +2141,6 @@
 			};
 			name = Release;
 		};
-		62C0F39F2C105D89C35CB12FB01D7169 /* Debug */ = {
-			isa = XCBuildConfiguration;
-			baseConfigurationReference = 84E20CD5CC11885C45F45112E0F62172 /* RouteComposer.debug.xcconfig */;
-			buildSettings = {
-				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
-				CLANG_ENABLE_OBJC_WEAK = NO;
-				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
-				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
-				CURRENT_PROJECT_VERSION = 1;
-				DEFINES_MODULE = YES;
-				DYLIB_COMPATIBILITY_VERSION = 1;
-				DYLIB_CURRENT_VERSION = 1;
-				DYLIB_INSTALL_NAME_BASE = "@rpath";
-				GCC_PREFIX_HEADER = "Target Support Files/RouteComposer/RouteComposer-prefix.pch";
-				INFOPLIST_FILE = "Target Support Files/RouteComposer/RouteComposer-Info.plist";
-				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
-				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
-				MODULEMAP_FILE = "Target Support Files/RouteComposer/RouteComposer.modulemap";
-				PRODUCT_MODULE_NAME = RouteComposer;
-				PRODUCT_NAME = RouteComposer;
-				SDKROOT = iphoneos;
-				SKIP_INSTALL = YES;
-				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
-				SWIFT_VERSION = 6.2;
-				TARGETED_DEVICE_FAMILY = "1,2";
-				VERSIONING_SYSTEM = "apple-generic";
-				VERSION_INFO_PREFIX = "";
-			};
-			name = Debug;
-		};
 		6D6BDF80CBFEE13BB3EC8438F796E580 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 40DD8886C8C31562A6938D95684D1F84 /* Pods-RouteComposer_Example.debug.xcconfig */;
@@ -2239,6 +2174,39 @@
 				VERSION_INFO_PREFIX = "";
 			};
 			name = Debug;
+		};
+		8AAF39C93BBD0302D57F9804EFE35905 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D5A370124C8F14171A14F988AEB9384B /* RouteComposer.release.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RouteComposer/RouteComposer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RouteComposer/RouteComposer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RouteComposer/RouteComposer.modulemap";
+				PRODUCT_MODULE_NAME = RouteComposer;
+				PRODUCT_NAME = RouteComposer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 6.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
 		};
 		90D4D09BCB6A4660E43ACBE9ECB6FE9A /* Debug */ = {
 			isa = XCBuildConfiguration;
@@ -2370,6 +2338,38 @@
 			};
 			name = Release;
 		};
+		C89A26BBAEC2EDE893E75E43F8099EF4 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 84E20CD5CC11885C45F45112E0F62172 /* RouteComposer.debug.xcconfig */;
+			buildSettings = {
+				ARCHS = "$(ARCHS_STANDARD_64_BIT)";
+				CLANG_ENABLE_OBJC_WEAK = NO;
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				GCC_PREFIX_HEADER = "Target Support Files/RouteComposer/RouteComposer-prefix.pch";
+				INFOPLIST_FILE = "Target Support Files/RouteComposer/RouteComposer-Info.plist";
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 15.0;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				MODULEMAP_FILE = "Target Support Files/RouteComposer/RouteComposer.modulemap";
+				PRODUCT_MODULE_NAME = RouteComposer;
+				PRODUCT_NAME = RouteComposer;
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_VERSION = 6.3;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
 		D30B6FA7BC4DE5F1901D864588533B64 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = 89DE7DA6E86A5584EED9FCD80D4B9053 /* Pods-RouteComposer_Example-RouteComposer_Tests.debug.xcconfig */;
@@ -2472,8 +2472,8 @@
 		EE8421B61ACCC64864A41389A24E3305 /* Build configuration list for PBXNativeTarget "RouteComposer" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
-				62C0F39F2C105D89C35CB12FB01D7169 /* Debug */,
-				0B93696798B0050ADEB3583A6F01EC24 /* Release */,
+				C89A26BBAEC2EDE893E75E43F8099EF4 /* Debug */,
+				8AAF39C93BBD0302D57F9804EFE35905 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;

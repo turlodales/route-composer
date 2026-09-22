@@ -16,7 +16,7 @@ import UIKit
 
 class StarViewController: UIViewController, ExampleAnalyticsSupport {
 
-    let screenType = ExampleScreenTypes.star
+    let screenType: ExampleScreenTypes = .star
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -26,7 +26,7 @@ class StarViewController: UIViewController, ExampleAnalyticsSupport {
     }
 
     @IBAction func goToProductTapped() {
-        try? router.navigate(to: ProductConfiguration.productScreen, with: ProductContext(productId: "02"))
+        try? router.navigate(to: ProductConfiguration.productScreen, with: ProductContext(productID: "02"))
     }
 
     @IBAction func goToCircleTapped() {

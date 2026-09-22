@@ -16,7 +16,7 @@ import UIKit
 
 class SecondModalLevelViewController: UIViewController, ExampleAnalyticsSupport {
 
-    let screenType = ExampleScreenTypes.secondLevelModal
+    let screenType: ExampleScreenTypes = .secondLevelModal
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -33,7 +33,7 @@ class SecondModalLevelViewController: UIViewController, ExampleAnalyticsSupport 
     }
 
     @IBAction func goToBerlinTapped() {
-        try? router.navigate(to: CitiesConfiguration.cityDetail(cityId: 15), animated: false)
+        try? router.navigate(to: CitiesConfiguration.cityDetail(cityID: 15), animated: false)
     }
 
     @objc func doneTapped() {

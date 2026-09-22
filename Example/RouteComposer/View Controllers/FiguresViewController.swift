@@ -16,7 +16,7 @@ import UIKit
 
 class FiguresViewController: UIViewController, ExampleAnalyticsSupport {
 
-    let screenType = ExampleScreenTypes.empty
+    let screenType: ExampleScreenTypes = .empty
 
     override func viewDidLoad() {
         super.viewDidLoad()

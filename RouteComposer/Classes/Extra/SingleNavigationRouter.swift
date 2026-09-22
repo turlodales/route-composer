@@ -40,7 +40,7 @@ public final class SingleNavigationLock {
 ///
 /// It is useful to avoid situations when the application can not control the amount of navigations
 /// (for example, a navigation triggered by the push notifications)
-public struct SingleNavigationRouter<R>: Router where R: Router {
+public struct SingleNavigationRouter<R: Router>: Router {
 
     // MARK: Properties
 

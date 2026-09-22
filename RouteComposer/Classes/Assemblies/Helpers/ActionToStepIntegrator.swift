@@ -13,17 +13,17 @@
 import Foundation
 import UIKit
 
-// This class is only needed not to expose `RoutingStep` as public.
+/// This class is only needed not to expose `RoutingStep` as public.
 /// A simple class that represents an intermediate `DestinationStep` and allows to add tasks to it.
 @MainActor
 public class IntermediateDestinationStep {
 
-    // Hides action integration from library user.
+    /// Hides action integration from library user.
     func routingStep(with action: some Action) -> RoutingStep? {
         nil
     }
 
-    // Hides action integration from library user.
+    /// Hides action integration from library user.
     func embeddableRoutingStep(with action: some ContainerAction) -> RoutingStep? {
         nil
     }

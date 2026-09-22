@@ -17,7 +17,7 @@ import UIKit
 /// and its `Context` instance.
 ///
 /// The view controller should conform to the `ContextChecking` to be used with this finder.
-public struct ClassWithContextFinder<VC: ContextChecking, C>: StackIteratingFinder where VC.Context == C, VC: UIViewController {
+public struct ClassWithContextFinder<VC: ContextChecking & UIViewController, C>: StackIteratingFinder where VC.Context == C {
 
     // MARK: Associated types
 
@@ -81,7 +81,9 @@ public extension ClassWithContextFinder {
     /// and its `Context` instance.
     ///
     /// The view controller should conform to the `ContextChecking` to be used with this finder.
-    static var classWithContextFinder: Self { .classWithContextFinder() }
+    static var classWithContextFinder: Self {
+        .classWithContextFinder()
+    }
 
     /// A default implementation of the view controllers finder, that searches for a view controller by its name
     /// and its `Context` instance.

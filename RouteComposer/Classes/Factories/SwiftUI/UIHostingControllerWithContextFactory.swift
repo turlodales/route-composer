@@ -32,8 +32,7 @@ public struct UIHostingControllerWithContextFactory<ContentView: View & ContextI
     public init() {}
 
     public func build(with context: Context) throws -> UIHostingController<ContentView> {
-        let viewController = UIHostingController(rootView: ContentView(with: context))
-        return viewController
+        return UIHostingController(rootView: ContentView(with: context))
     }
 
 }
@@ -45,5 +44,7 @@ public struct UIHostingControllerWithContextFactory<ContentView: View & ContextI
 public extension UIHostingControllerWithContextFactory {
     /// Builds `UIHostingController` with `ContentView` as a `UIHostingController.rootView` using the constructor
     /// provided with `ContextInstantiatable` implementation.
-    static var hostingControllerWithContextFactory: Self { Self() }
+    static var hostingControllerWithContextFactory: Self {
+        Self()
+    }
 }

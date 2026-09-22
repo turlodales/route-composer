@@ -36,9 +36,9 @@ extension Array where Element: UIViewController {
         guard count == array.count else {
             return false
         }
-        return enumerated().first(where: { index, vc in
+        return !enumerated().contains(where: { index, vc in
             array[index] !== vc
-        }) == nil
+        })
     }
 
 }

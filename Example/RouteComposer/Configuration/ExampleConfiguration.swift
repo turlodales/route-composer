@@ -17,7 +17,7 @@ import SwiftUI
 #endif
 
 @MainActor
-let transitionController = BlurredBackgroundTransitionController()
+let transitionController: BlurredBackgroundTransitionController = .init()
 
 @MainActor
 protocol ExampleScreenConfiguration {
@@ -161,7 +161,8 @@ extension ExampleScreenConfiguration {
             .adding(ContextSettingTask())
             .using(.push)
             .from(circleScreen.expectingContainer())
-            .assemble().unsafelyRewrapped()
+            .assemble()
+            .unsafelyRewrapped()
     }
 
 }

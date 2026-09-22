@@ -16,7 +16,7 @@ import UIKit
 
 class PromptViewController: UIViewController, ExampleAnalyticsSupport {
 
-    let screenType = ExampleScreenTypes.welcome
+    let screenType: ExampleScreenTypes = .welcome
 
     @IBAction func goToHomeTapped() {
         try? router.navigate(to: ConfigurationHolder.configuration.homeScreen, with: nil)

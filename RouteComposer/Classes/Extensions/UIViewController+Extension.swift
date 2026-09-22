@@ -46,7 +46,7 @@ public extension UIViewController {
         }
 
         if let container = viewController as? ContainerViewController, options.contains(.visible) || options.contains(.contained) {
-            var viewControllers: [[UIViewController]] = []
+            var viewControllers = [[UIViewController]]()
             let containerAdapter = try containerAdapterLocator.getAdapter(for: container)
             viewControllers.append(containerAdapter.visibleViewControllers)
             if options.contains(.contained) {

@@ -101,7 +101,9 @@ public extension DestinationStep where VC == UIViewController {
     }
 
     /// Returns the root view controller of the key window.
-    static var root: DestinationStep<UIViewController, C> { root() }
+    static var root: DestinationStep<UIViewController, C> {
+        root()
+    }
 
     /// Returns the topmost presented view controller.
     static func current<NewContext>(windowProvider: WindowProvider = RouteComposerDefaults.shared.windowProvider) -> DestinationStep<UIViewController, NewContext> {
@@ -109,7 +111,9 @@ public extension DestinationStep where VC == UIViewController {
     }
 
     /// Returns the topmost presented view controller.
-    static var current: DestinationStep<UIViewController, C> { current() }
+    static var current: DestinationStep<UIViewController, C> {
+        current()
+    }
 
     /// Returns the resulting view controller of the finder provided.
     static func custom<F: Finder>(using finder: F) -> DestinationStep<F.ViewController, F.Context> {
@@ -124,7 +128,9 @@ public extension ActionToStepIntegrator where VC == UIViewController {
     }
 
     /// Returns the root view controller of the key window.
-    static var root: DestinationStep<UIViewController, C> { root() }
+    static var root: DestinationStep<UIViewController, C> {
+        root()
+    }
 
     /// Returns the topmost presented view controller.
     static func current<NewContext>(windowProvider: WindowProvider = RouteComposerDefaults.shared.windowProvider) -> DestinationStep<UIViewController, NewContext> {
@@ -132,7 +138,9 @@ public extension ActionToStepIntegrator where VC == UIViewController {
     }
 
     /// Returns the topmost presented view controller.
-    static var current: DestinationStep<UIViewController, C> { current() }
+    static var current: DestinationStep<UIViewController, C> {
+        current()
+    }
 
     /// Returns the resulting view controller of the finder provided.
     static func custom<F: Finder>(using finder: F) -> DestinationStep<F.ViewController, F.Context> {

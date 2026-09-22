@@ -18,7 +18,7 @@ import XCTest
 @MainActor
 class ExtrasTest: XCTestCase {
 
-    let router = SingleNavigationRouter(router: DefaultRouter(), lock: SingleNavigationLock())
+    let router: SingleNavigationRouter = .init(router: DefaultRouter(), lock: SingleNavigationLock())
 
     /// Fakes modal presentation action using `TestModalPresentableController`
     struct FakeTimedPresentModallyAction: Action {
@@ -422,7 +422,7 @@ class ExtrasTest: XCTestCase {
         XCTAssertEqual(wasInCompletion, true)
         XCTAssertEqual(tabBarController.viewControllers?.count, 0)
 
-        var viewControllers: [UIViewController] = []
+        var viewControllers = [UIViewController]()
         try? action.perform(embedding: UIViewController(), in: &viewControllers)
         XCTAssertEqual(viewControllers.count, 1)
     }

@@ -16,7 +16,7 @@ import UIKit
 extension UIViewController {
 
     var allPresentedViewControllers: [UIViewController] {
-        var allPresentedViewControllers: [UIViewController] = []
+        var allPresentedViewControllers = [UIViewController]()
         var presentingViewController = self
 
         while let presentedViewController = presentingViewController.presentedViewController,
@@ -29,7 +29,7 @@ extension UIViewController {
     }
 
     var allParents: [UIViewController] {
-        var allParents: [UIViewController] = []
+        var allParents = [UIViewController]()
         var currentViewController: UIViewController? = parentViewController
         while let currentParent = currentViewController {
             allParents.append(currentParent)

@@ -13,7 +13,7 @@
 import Foundation
 import UIKit
 
-// - The `UISplitViewController` extension is to support the `ContainerViewController` protocol
+/// - The `UISplitViewController` extension is to support the `ContainerViewController` protocol
 extension UISplitViewController: ContainerViewController {
 
     public var canBeDismissed: Bool {

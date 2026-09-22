@@ -432,7 +432,7 @@
                         </constraints>
                     </view>
                     <connections>
-                        <outlet property="productIdLabel" destination="gJM-YS-55p" id="pON-EH-shs"/>
+                        <outlet property="productIDLabel" destination="gJM-YS-55p" id="pON-EH-shs"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="l8h-8o-8ZE" userLabel="First Responder" sceneMemberID="firstResponder"/>

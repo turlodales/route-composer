@@ -321,7 +321,9 @@ public extension ViewControllerActions.ReplaceRootAction {
     }
 
     /// Replaces the root view controller in the key `UIWindow`
-    static var replaceRoot: Self { .replaceRoot() }
+    static var replaceRoot: Self {
+        .replaceRoot()
+    }
 }
 
 public extension ViewControllerActions.PresentModallyAction {
@@ -385,10 +387,14 @@ public extension ViewControllerActions.PresentModallyAction {
     }
 
     /// Presents a view controller modally
-    static var present: Self { .present() }
+    static var present: Self {
+        .present()
+    }
 }
 
 public extension ViewControllerActions.NilAction {
     /// `Action` does nothing, but can be helpful for testing or writing the sequences of steps with the `NilFactory`
-    static var nilAction: Self { .init() }
+    static var nilAction: Self {
+        .init()
+    }
 }

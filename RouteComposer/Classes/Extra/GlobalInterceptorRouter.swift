@@ -18,7 +18,7 @@ import UIKit
 /// any starting point is found. `GlobalInterceptorRouter` proxy allows to add such a global interceptor that will be
 /// executed before any work that `DefaultRouter` will do.
 @MainActor
-public struct GlobalInterceptorRouter<R>: Router where R: Router {
+public struct GlobalInterceptorRouter<R: Router>: Router {
 
     // MARK: Properties
 

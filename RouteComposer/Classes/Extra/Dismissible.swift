@@ -14,7 +14,7 @@ import Foundation
 import UIKit
 
 @MainActor
-let associatedObjectHandle = UnsafeRawPointer(UnsafeMutablePointer.allocate(capacity: 0))
+let associatedObjectHandle: UnsafeRawPointer = .init(UnsafeMutablePointer.allocate(capacity: 0))
 
 /// `UIViewController` should conform to `Dismissible` protocol to be used with `DismissalMethodProvidingContextTask`.
 @MainActor
@@ -87,12 +87,12 @@ public extension Dismissible where DismissalTargetContext == Void {
 
 }
 
-/// `DismissibleWithRuntimeStorage` simplifies `Dismissible` protocol conformance implementing required
-/// `dismissalBlock` using Objective C runtime.
+/// A `Dismissible` implementation that stores its dismissal block using the Objective-C runtime.
 
 @MainActor
 public protocol DismissibleWithRuntimeStorage: Dismissible {}
 
+/// Provides the default runtime-backed implementation of `dismissalBlock`.
 @MainActor
 public extension DismissibleWithRuntimeStorage {
 

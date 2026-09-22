@@ -16,11 +16,6 @@ struct InPlaceTransformingAnyContext: AnyContext {
     let context: AnyContext
     let transformer: AnyContextTransformer
 
-    init(context: AnyContext, transformer: AnyContextTransformer) {
-        self.context = context
-        self.transformer = transformer
-    }
-
     func value<Context>() throws -> Context {
         return try transformer.transform(context)
     }

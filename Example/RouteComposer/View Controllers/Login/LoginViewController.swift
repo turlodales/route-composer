@@ -52,7 +52,7 @@ class LoginInterceptor<C>: RoutingInterceptor {
 
 class LoginViewController: UIViewController, ExampleAnalyticsSupport {
 
-    let screenType = ExampleScreenTypes.login
+    let screenType: ExampleScreenTypes = .login
 
     @IBOutlet private var loginTextField: UITextField!
 

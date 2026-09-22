@@ -24,22 +24,22 @@ public struct SearchOptions: OptionSet, CaseIterable, CustomStringConvertible, S
     // MARK: Options
 
     /// Compare to a view controller provided
-    public static let current = SearchOptions(rawValue: 1 << 0)
+    public static let current: SearchOptions = .init(rawValue: 1 << 0)
 
     /// If a view controller is a container, search in its visible view controllers
-    public static let visible = SearchOptions(rawValue: 1 << 1)
+    public static let visible: SearchOptions = .init(rawValue: 1 << 1)
 
     /// If a view controller is a container, search in all the view controllers it contains
-    public static let contained = SearchOptions(rawValue: 1 << 2)
+    public static let contained: SearchOptions = .init(rawValue: 1 << 2)
 
     /// Start search from the view controller provided and search in all view controllers it presented
-    public static let presented = SearchOptions(rawValue: 1 << 3)
+    public static let presented: SearchOptions = .init(rawValue: 1 << 3)
 
     /// Start search from the view controller provided and search in all view controllers that are presenting it
-    public static let presenting = SearchOptions(rawValue: 1 << 4)
+    public static let presenting: SearchOptions = .init(rawValue: 1 << 4)
 
     /// Start search from the view controller provided and search in all its parent view controllers
-    public static let parent = SearchOptions(rawValue: 1 << 5)
+    public static let parent: SearchOptions = .init(rawValue: 1 << 5)
 
     // MARK: Combinations
 
@@ -70,22 +70,30 @@ public struct SearchOptions: OptionSet, CaseIterable, CustomStringConvertible, S
     }
 
     public var description: String {
-        SearchOptions.allCases.compactMap { option in
-            guard contains(option) else {
-                return nil
+        SearchOptions.allCases
+            .compactMap { option in
+                guard contains(option) else {
+                    return nil
+                }
+                switch option {
+                case .current:
+                    return "current"
+                case .visible:
+                    return "visible"
+                case .contained:
+                    return "contained"
+                case .presented:
+                    return "presented"
+                case .presenting:
+                    return "presenting"
+                case .parent:
+                    return "parent"
+                default:
+                    assertionFailure("Unknown SearchOptions")
+                    return nil
+                }
             }
-            switch option {
-            case .current: return "current"
-            case .visible: return "visible"
-            case .contained: return "contained"
-            case .presented: return "presented"
-            case .presenting: return "presenting"
-            case .parent: return "parent"
-            default:
-                assertionFailure("Unknown SearchOptions")
-                return nil
-            }
-        }.joined(separator: ", ")
+            .joined(separator: ", ")
     }
 
 }

@@ -1118,7 +1118,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_STRICT_CONCURRENCY = complete;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 6.3;
 			};
 			name = Debug;
 		};
@@ -1169,7 +1169,7 @@
 				SDKROOT = iphoneos;
 				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
 				SWIFT_STRICT_CONCURRENCY = complete;
-				SWIFT_VERSION = 6.0;
+				SWIFT_VERSION = 6.3;
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -1242,7 +1242,7 @@
 				DEVELOPMENT_TEAM = PG4V34R8QT;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = RouteComposer_ExampleUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'";
 				PRODUCT_BUNDLE_IDENTIFIER = "ie.ekazaev.RouteComposer-ExampleUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -1265,7 +1265,7 @@
 				DEVELOPMENT_TEAM = PG4V34R8QT;
 				GCC_C_LANGUAGE_STANDARD = gnu11;
 				INFOPLIST_FILE = RouteComposer_ExampleUITests/Info.plist;
-				IPHONEOS_DEPLOYMENT_TARGET = 11.0;
+				IPHONEOS_DEPLOYMENT_TARGET = 15.6;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) '@executable_path/Frameworks' '@loader_path/Frameworks'";
 				PRODUCT_BUNDLE_IDENTIFIER = "ie.ekazaev.RouteComposer-ExampleUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";

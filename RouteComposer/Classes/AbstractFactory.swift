@@ -31,7 +31,7 @@ public protocol AbstractFactory {
 
     /// The `Router` will call it before the navigation process and if the `AbstractFactory` is not able to
     /// build a view controller it should throw an exception. (example: it has to build a product view
-    //  controller but there is no product code in context)
+    ///  controller but there is no product code in context)
     ///
     /// - Parameter context: A `Context` instance that is provided to the `Router`.
     /// - Throws: The `RoutingError` if the `Factory` cannot prepare to build a `UIViewController` instance

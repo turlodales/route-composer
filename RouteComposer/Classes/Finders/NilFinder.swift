@@ -49,5 +49,7 @@ public extension NilFinder {
     /// Its only purpose is to provide type safety checks for `StepAssembly`.
     ///
     /// For example, `UIViewController` of this step was already loaded and integrated into a stack by a storyboard.
-    static var nilFinder: Self { Self() }
+    static var nilFinder: Self {
+        Self()
+    }
 }

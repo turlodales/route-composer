@@ -21,7 +21,8 @@ public struct KeyWindowProvider: WindowProvider {
 
     /// `UIWindow` instance
     public var window: UIWindow? {
-        let keyWindow: UIWindow? = UIApplication.shared.connectedScenes
+        let keyWindow: UIWindow? = UIApplication.shared
+            .connectedScenes
             .compactMap { $0 as? UIWindowScene }
             .flatMap(\.windows)
             .first(where: { $0.isKeyWindow })

@@ -46,14 +46,14 @@ enum InternalSearchConfiguration {
         .assemble()
 
     @MainActor
-    static let home = Destination(to: StepAssembler<HomeViewController, MainScreenContext>()
+    static let home: Destination = .init(to: StepAssembler<HomeViewController, MainScreenContext>()
         .finder(.classWithContextFinder)
         .factory(.nilFactory)
         .from(mainScreenFromCircle)
         .assemble(), with: .home)
 
     @MainActor
-    static let settings = Destination(to: StepAssembler<SettingsViewController, MainScreenContext>()
+    static let settings: Destination = .init(to: StepAssembler<SettingsViewController, MainScreenContext>()
         .finder(.classWithContextFinder)
         .factory(.nilFactory)
         .from(mainScreenFromCircle)

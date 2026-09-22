@@ -23,10 +23,6 @@ public struct ContainerStepChainAssembly<AcceptableContainer: ContainerViewContr
 
     // MARK: Methods
 
-    init(previousSteps: [RoutingStep]) {
-        self.previousSteps = previousSteps
-    }
-
     /// Adds a single step to the chain
     ///
     /// - Parameter previousStep: The instance of `StepWithActionAssemblable`

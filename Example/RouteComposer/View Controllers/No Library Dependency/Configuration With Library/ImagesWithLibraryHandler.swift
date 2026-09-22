@@ -20,7 +20,7 @@ import UIKit
 
 class ImagesWithLibraryHandler: CustomViewControllerDelegate, ImagesControllerDelegate, ImageDetailsControllerDelegate {
 
-    static let shared = ImagesWithLibraryHandler()
+    static let shared: ImagesWithLibraryHandler = .init()
 
     func didSelect(imageID: String, in controller: ImagesViewController) {
         try? UIViewController.router.navigate(to: ImagesConfigurationWithLibrary.imageDetails(for: imageID), animated: true)

@@ -38,8 +38,7 @@ public struct UIHostingControllerFactory<ContentView: View, Context>: Factory {
     }
 
     public func build(with context: Context) throws -> UIHostingController<ContentView> {
-        let viewController = UIHostingController(rootView: buildBlock(context))
-        return viewController
+        return UIHostingController(rootView: buildBlock(context))
     }
 
 }

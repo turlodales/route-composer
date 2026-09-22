@@ -21,10 +21,10 @@ import UIKit
 class ImagesWithoutLibraryConfiguration {
 
     @MainActor
-    static let shared = ImagesWithoutLibraryConfiguration()
+    static let shared: ImagesWithoutLibraryConfiguration = .init()
 
     @MainActor
-    private static let handler = ImagesWithoutLibraryHandler()
+    private static let handler: ImagesWithoutLibraryHandler = .init()
 
     @MainActor
     func showCustomController() {
@@ -50,7 +50,8 @@ class ImagesWithoutLibraryConfiguration {
         let navigationController = UINavigationController(rootViewController: containerController)
 
         // Handled by TopMostViewControllerStep
-        let rootController = UIApplication.shared.connectedScenes
+        let rootController = UIApplication.shared
+            .connectedScenes
             .compactMap { $0 as? UIWindowScene }
             .flatMap(\.windows)
             .first(where: { $0.isKeyWindow })?

@@ -85,7 +85,9 @@ public extension UIHostingControllerWithContextFinder {
     /// and its `Context` instance.
     ///
     /// The `View` should conform to the `ContextChecking` to be used with this finder.
-    static var hostingControllerWithContextFinder: UIHostingControllerWithContextFinder { Self() }
+    static var hostingControllerWithContextFinder: UIHostingControllerWithContextFinder {
+        Self()
+    }
 
     /// A default implementation of the finder, that searches for a `UIHostingController` with a specific `View`
     /// and its `Context` instance.

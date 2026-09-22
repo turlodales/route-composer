@@ -138,17 +138,17 @@ extension DefaultRouter {
     final class PostponedTaskRunner {
 
         private struct PostTaskSlip {
-            // This reference is weak because even though this view controller was created by a fabric but then some other
-            // view controller in the chain can have an action that will actually remove this view controller from the
-            // stack. We do not want to keep a strong reference to it and prevent it from deallocation. Potentially it's
-            // a very rare issue but must be kept in mind.
+            /// This reference is weak because even though this view controller was created by a fabric but then some other
+            /// view controller in the chain can have an action that will actually remove this view controller from the
+            /// stack. We do not want to keep a strong reference to it and prevent it from deallocation. Potentially it's
+            /// a very rare issue but must be kept in mind.
             weak var viewController: UIViewController?
 
             let postTask: AnyPostRoutingTask
         }
 
-        // this class is just a placeholder. Router needs at least one post routing task per view controller to
-        // store a reference there.
+        /// this class is just a placeholder. Router needs at least one post routing task per view controller to
+        /// store a reference there.
         private struct EmptyPostTask: AnyPostRoutingTask {
 
             func perform(on viewController: UIViewController, with context: AnyContext, routingStack: [UIViewController]) {}
@@ -171,7 +171,7 @@ extension DefaultRouter {
         }
 
         final func perform() throws {
-            var viewControllers: [UIViewController] = []
+            var viewControllers = [UIViewController]()
             for taskSlip in taskSlips {
                 guard let viewController = taskSlip.postTaskSlip.viewController, !viewControllers.contains(viewController) else {
                     continue

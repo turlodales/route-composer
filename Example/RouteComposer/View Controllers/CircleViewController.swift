@@ -15,7 +15,7 @@ import UIKit
 
 class CircleViewController: UIViewController, ExampleAnalyticsSupport {
 
-    let screenType = ExampleScreenTypes.circle
+    let screenType: ExampleScreenTypes = .circle
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -39,7 +39,7 @@ class CircleViewController: UIViewController, ExampleAnalyticsSupport {
     }
 
     @IBAction func goToProductTapped() {
-        try? router.navigate(to: ProductConfiguration.productScreen, with: ProductContext(productId: "00"))
+        try? router.navigate(to: ProductConfiguration.productScreen, with: ProductContext(productID: "00"))
     }
 
     @IBAction func goToWelcomeTapped() {

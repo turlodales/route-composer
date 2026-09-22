@@ -64,7 +64,7 @@ public struct CATransactionWrappedAction<A: Action>: Action {
             return
         }
         CATransaction.begin()
-        var actionResult: RoutingResult = .failure(RoutingError.compositionFailed(.init("Wrapped \(action) did not complete correctly.")))
+        var actionResult = RoutingResult.failure(RoutingError.compositionFailed(.init("Wrapped \(action) did not complete correctly.")))
         action.perform(with: viewController, on: existingController, animated: true, completion: { result in
             actionResult = result
         })
@@ -104,7 +104,7 @@ public struct CATransactionWrappedContainerAction<A: ContainerAction>: Container
             return
         }
         CATransaction.begin()
-        var actionResult: RoutingResult = .failure(RoutingError.compositionFailed(.init("Wrapped \(action) did not complete correctly.")))
+        var actionResult = RoutingResult.failure(RoutingError.compositionFailed(.init("Wrapped \(action) did not complete correctly.")))
         action.perform(with: viewController, on: existingController, animated: true, completion: { result in
             actionResult = result
         })

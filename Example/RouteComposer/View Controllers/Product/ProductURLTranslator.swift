@@ -20,11 +20,11 @@ class ProductURLTranslator: ExampleURLTranslator {
         guard let urlComponents = URLComponents(url: url, resolvingAgainstBaseURL: false),
               let queryItems = urlComponents.queryItems,
               let item = queryItems.first(where: { $0.name == "product" }),
-              let productIdValue = item.value else {
+              let productIDValue = item.value else {
             return nil
         }
 
-        return Destination(to: ProductConfiguration.productScreen, with: ProductContext(productId: productIdValue, productURL: url)).unwrapped()
+        return Destination(to: ProductConfiguration.productScreen, with: ProductContext(productID: productIDValue, productURL: url)).unwrapped()
     }
 
 }

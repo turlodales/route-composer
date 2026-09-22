@@ -17,18 +17,18 @@ import UIKit
 class CityDetailContextTask: ContextTask {
 
     func perform(on viewController: CityDetailViewController, with context: Int) throws {
-        viewController.cityId = context
+        viewController.cityID = context
     }
 
 }
 
 class CityDetailViewController: UIViewController, ExampleAnalyticsSupport {
 
-    let screenType = ExampleScreenTypes.cityDetail
+    let screenType: ExampleScreenTypes = .cityDetail
 
     @IBOutlet private var detailsTextView: UITextView!
 
-    var cityId: Int? {
+    var cityID: Int? {
         didSet {
             reloadData()
         }
@@ -40,14 +40,14 @@ class CityDetailViewController: UIViewController, ExampleAnalyticsSupport {
     }
 
     private func reloadData() {
-        guard isViewLoaded, let city = CitiesDataModel.cities.first(where: { $0.cityId == cityId }) else {
+        guard isViewLoaded, let city = CitiesDataModel.cities.first(where: { $0.cityID == cityID }) else {
             return
         }
         title = "\(city.city)"
 
         detailsTextView.text = city.city + "\n\n" + city.description
-        if let cityId {
-            view.accessibilityIdentifier = "cityDetailsViewController+\(cityId)"
+        if let cityID {
+            view.accessibilityIdentifier = "cityDetailsViewController+\(cityID)"
         } else {
             view.accessibilityIdentifier = "cityDetailsViewController"
         }
@@ -58,7 +58,7 @@ class CityDetailViewController: UIViewController, ExampleAnalyticsSupport {
     }
 
     @IBAction func backProgrammaticallyTapped() {
-        try? router.navigate(to: CitiesConfiguration.citiesList(cityId: nil))
+        try? router.navigate(to: CitiesConfiguration.citiesList(cityID: nil))
     }
 
 }

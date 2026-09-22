@@ -22,7 +22,7 @@ private struct TestImplementation: TestProtocol {}
 @MainActor
 class RouterTests: XCTestCase {
 
-    let router = DefaultRouter()
+    let router: DefaultRouter = .init()
 
     class TestPostRoutingTask<VC: UIViewController, C>: PostRoutingTask {
 

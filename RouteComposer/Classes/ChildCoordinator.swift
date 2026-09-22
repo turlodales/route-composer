@@ -28,10 +28,6 @@ public struct ChildCoordinator {
 
     // MARK: Methods
 
-    init(childFactories: [(factory: PostponedIntegrationFactory, context: AnyContext)]) {
-        self.childFactories = childFactories
-    }
-
     /// Builds child view controller stack with the context instance provided.
     ///
     /// - Parameters:

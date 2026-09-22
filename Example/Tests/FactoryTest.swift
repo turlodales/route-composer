@@ -140,7 +140,7 @@ class FactoryTest: XCTestCase {
     }
 
     func testPostponedIntegrationFactory() throws {
-        var viewControllerStack: [UIViewController] = []
+        var viewControllerStack = [UIViewController]()
         let factory = ClassFactory<UIViewController, Any?>()
         var postponedFactory = try PostponedIntegrationFactory(for: XCTUnwrap(FactoryBox(factory, action: ContainerActionBox(UINavigationController.push()))))
         XCTAssertNoThrow(try postponedFactory.prepare(with: AnyContextBox(nil as Any?)))

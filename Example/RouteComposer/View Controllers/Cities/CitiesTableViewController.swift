@@ -18,17 +18,17 @@ class CityTableContextTask: ContextTask {
 
     /// `CitiesTableViewController` can perfectly work with the `Context` object of type `Int?`, but to demonstrate the possibility of context conversion,
     /// we say that the actual context is `String?`. But it is done for demonstration and testing purposes only.
-    func perform(on viewController: CitiesTableViewController, with cityIdAsString: String?) throws {
-        guard let cityIdAsString else {
-            viewController.cityId = nil
+    func perform(on viewController: CitiesTableViewController, with cityIDAsString: String?) throws {
+        guard let cityIDAsString else {
+            viewController.cityID = nil
             return
         }
 
-        guard let cityId = Int(cityIdAsString),
-              CitiesDataModel.cities.map(\.cityId).contains(cityId) else {
-            throw RoutingError.generic(.init("City id \(cityIdAsString) is invalid."))
+        guard let cityID = Int(cityIDAsString),
+              CitiesDataModel.cities.map(\.cityID).contains(cityID) else {
+            throw RoutingError.generic(.init("City id \(cityIDAsString) is invalid."))
         }
-        viewController.cityId = cityId
+        viewController.cityID = cityID
     }
 
 }
@@ -36,14 +36,14 @@ class CityTableContextTask: ContextTask {
 @MainActor
 class CitiesTableViewController: UITableViewController, ExampleAnalyticsSupport {
 
-    let screenType = ExampleScreenTypes.citiesList
+    let screenType: ExampleScreenTypes = .citiesList
 
-    var cityId: Int? {
+    var cityID: Int? {
         didSet {
-            guard let cityId else {
+            guard let cityID else {
                 return
             }
-            let indexPath = IndexPath(row: cityId - 1, section: 0)
+            let indexPath = IndexPath(row: cityID - 1, section: 0)
 
             tableView.selectRow(at: indexPath, animated: true, scrollPosition: .none)
         }
@@ -73,7 +73,7 @@ class CitiesTableViewController: UITableViewController, ExampleAnalyticsSupport 
 
     override func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         let city = CitiesDataModel.cities[indexPath.row]
-        try? router.navigate(to: CitiesConfiguration.cityDetail(cityId: city.cityId))
+        try? router.navigate(to: CitiesConfiguration.cityDetail(cityID: city.cityID))
     }
 
     @IBAction func goToSquareTapped() {
@@ -87,7 +87,7 @@ class CitiesTableViewController: UITableViewController, ExampleAnalyticsSupport 
             UIApplication.shared.beginIgnoringInteractionEvents()
             DispatchQueue.main.asyncAfter(deadline: DispatchTime.now() + Double(Int64(1 * Double(NSEC_PER_SEC))) / Double(NSEC_PER_SEC)) {
                 UIApplication.shared.endIgnoringInteractionEvents()
-                try? router.navigate(to: ProductConfiguration.productScreen, with: ProductContext(productId: "123"), animated: true, completion: nil)
+                try? router.navigate(to: ProductConfiguration.productScreen, with: ProductContext(productID: "123"), animated: true, completion: nil)
             }
         }
     }

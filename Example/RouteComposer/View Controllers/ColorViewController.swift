@@ -78,7 +78,7 @@ class ColorViewController: UIViewController, DismissibleWithRuntimeStorage, Exam
 
     typealias DismissalTargetContext = Void
 
-    let screenType = ExampleScreenTypes.color
+    let screenType: ExampleScreenTypes = .color
 
     typealias ColorDisplayModel = String
 

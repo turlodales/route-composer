@@ -18,7 +18,7 @@ import UIKit
 
 class RoutingRuleSupportViewController: UIViewController, RoutingInterceptable, ExampleAnalyticsSupport {
 
-    let screenType = ExampleScreenTypes.ruleSupport
+    let screenType: ExampleScreenTypes = .ruleSupport
 
     private(set) var canBeDismissed: Bool = true
 
@@ -47,13 +47,13 @@ class RoutingRuleSupportViewController: UIViewController, RoutingInterceptable, 
     }
 
     @IBAction func goToLondonTapped() {
-        try? router.navigate(to: CitiesConfiguration.cityDetail(cityId: 13))
+        try? router.navigate(to: CitiesConfiguration.cityDetail(cityID: 13))
     }
 
     @IBAction func goToNewYorkUnexpectedTapped() {
         // This is for the example purposes only. You should avoid a code like this.
         try? router.navigate(to: ConfigurationHolder.configuration.secondModalScreen, with: "0000FF")
-        try? router.navigate(to: CitiesConfiguration.cityDetail(cityId: 2))
+        try? router.navigate(to: CitiesConfiguration.cityDetail(cityID: 2))
     }
 
 }

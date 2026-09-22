@@ -23,10 +23,6 @@ public struct LastStepInChainAssembly<ViewController: UIViewController, Context>
 
     // MARK: Methods
 
-    init(previousSteps: [RoutingStep]) {
-        self.previousSteps = previousSteps
-    }
-
     /// Assembles all the provided settings.
     ///
     /// - Returns: The instance of `DestinationStep` with all the settings provided inside.
@@ -39,7 +35,7 @@ public struct LastStepInChainAssembly<ViewController: UIViewController, Context>
             preconditionFailure("No steps provided to chain.")
         }
 
-        let firstStep = steps.dropLast().reversed().reduce(lastStep) { result, currentStep in
+        return steps.dropLast().reversed().reduce(lastStep) { result, currentStep in
             guard var step = currentStep as? BaseStep else {
                 assertionFailure("\(currentStep) can not be chained to non chainable step \(result)")
                 return currentStep
@@ -47,8 +43,6 @@ public struct LastStepInChainAssembly<ViewController: UIViewController, Context>
             step.from(result)
             return step
         }
-
-        return firstStep
     }
 
 }

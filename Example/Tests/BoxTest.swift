@@ -64,7 +64,7 @@ class BoxTests: XCTestCase {
         let factory = EmptyContainer()
         var box = ContainerFactoryBox(factory, action: ActionBox(ViewControllerActions.NilAction()))
         XCTAssertNotNil(box)
-        var children: [AnyFactory] = []
+        var children = [AnyFactory]()
         try children.append(XCTUnwrap(FactoryBox(EmptyFactory(), action: ContainerActionBox(UINavigationController.push()))))
         try children.append(XCTUnwrap(FactoryBox(EmptyFactory(), action: ContainerActionBox(UINavigationController.push()))))
         try children.append(XCTUnwrap(FactoryBox(EmptyFactory(), action: ActionBox(ViewControllerActions.NilAction()))))
@@ -78,7 +78,7 @@ class BoxTests: XCTestCase {
         let factory = EmptyContainer()
         var box = ContainerFactoryBox(factory, action: ActionBox(ViewControllerActions.NilAction()))
         XCTAssertNotNil(box)
-        var children: [AnyFactory] = []
+        var children = [AnyFactory]()
         try children.append(XCTUnwrap(FactoryBox(ClassFactory<UIViewController, Any?>(), action: ContainerActionBox(UINavigationController.push()))))
         try children.append(XCTUnwrap(FactoryBox(EmptyFactory(), action: ContainerActionBox(UINavigationController.push()))))
         try children.append(XCTUnwrap(ContainerFactoryBox(NavigationControllerFactory<UINavigationController, Any?>(), action: ActionBox(ViewControllerActions.PresentModallyAction()))))

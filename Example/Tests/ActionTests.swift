@@ -114,18 +114,19 @@ class ActionTests: XCTestCase {
                                      isModalInPresentation: true,
                                      presentationConfiguration: { _ in
                                          wasInPresentationConfig = true
-                                     }).perform(with: viewController, on: PresentingModallyController(), animated: true, completion: { result in
-            wasInCompletion = true
-            XCTAssertEqual(viewController.modalPresentationStyle, UIModalPresentationStyle.fullScreen)
-            XCTAssertEqual(viewController.modalTransitionStyle, UIModalTransitionStyle.crossDissolve)
-            XCTAssertEqual(viewController.preferredContentSize.width, 100)
-            XCTAssertEqual(viewController.preferredContentSize.height, 100)
-            XCTAssertEqual(viewController.isModalInPresentation, true)
-            XCTAssertTrue(viewController.transitioningDelegate === transitionDelegate)
-            if case .failure = result {
-                XCTAssert(false)
-            }
-        })
+                                     })
+                                     .perform(with: viewController, on: PresentingModallyController(), animated: true, completion: { result in
+                                         wasInCompletion = true
+                                         XCTAssertEqual(viewController.modalPresentationStyle, UIModalPresentationStyle.fullScreen)
+                                         XCTAssertEqual(viewController.modalTransitionStyle, UIModalTransitionStyle.crossDissolve)
+                                         XCTAssertEqual(viewController.preferredContentSize.width, 100)
+                                         XCTAssertEqual(viewController.preferredContentSize.height, 100)
+                                         XCTAssertEqual(viewController.isModalInPresentation, true)
+                                         XCTAssertTrue(viewController.transitioningDelegate === transitionDelegate)
+                                         if case .failure = result {
+                                             XCTAssert(false)
+                                         }
+                                     })
         XCTAssertTrue(wasInCompletion)
         XCTAssertTrue(wasInPresentationConfig)
 
@@ -174,18 +175,19 @@ class ActionTests: XCTestCase {
                                      isModalInPresentation: true,
                                      popoverConfiguration: { _ in
                                          wasInPopoverConfig = true
-                                     }).perform(with: viewController, on: PresentingModallyController(), animated: true, completion: { result in
-            wasInCompletion = true
-            XCTAssertEqual(viewController.modalPresentationStyle, UIModalPresentationStyle.popover)
-            XCTAssertEqual(viewController.modalTransitionStyle, UIModalTransitionStyle.crossDissolve)
-            XCTAssertEqual(viewController.preferredContentSize.width, 100)
-            XCTAssertEqual(viewController.preferredContentSize.height, 100)
-            XCTAssertEqual(viewController.isModalInPresentation, true)
-            XCTAssertTrue(viewController.transitioningDelegate === transitionDelegate)
-            if case .failure = result {
-                XCTAssert(false)
-            }
-        })
+                                     })
+                                     .perform(with: viewController, on: PresentingModallyController(), animated: true, completion: { result in
+                                         wasInCompletion = true
+                                         XCTAssertEqual(viewController.modalPresentationStyle, UIModalPresentationStyle.popover)
+                                         XCTAssertEqual(viewController.modalTransitionStyle, UIModalTransitionStyle.crossDissolve)
+                                         XCTAssertEqual(viewController.preferredContentSize.width, 100)
+                                         XCTAssertEqual(viewController.preferredContentSize.height, 100)
+                                         XCTAssertEqual(viewController.isModalInPresentation, true)
+                                         XCTAssertTrue(viewController.transitioningDelegate === transitionDelegate)
+                                         if case .failure = result {
+                                             XCTAssert(false)
+                                         }
+                                     })
         XCTAssertTrue(wasInCompletion)
         XCTAssertTrue(wasInPopoverConfig)
 
@@ -236,18 +238,19 @@ class ActionTests: XCTestCase {
                                          if let _ = $0 as? UISheetPresentationController {
                                              wasInSheetPresentationConfig = true
                                          }
-                                     }).perform(with: viewController, on: PresentingModallyController(), animated: true, completion: { result in
-            wasInCompletion = true
-            XCTAssertEqual(viewController.modalPresentationStyle, UIModalPresentationStyle.pageSheet)
-            XCTAssertEqual(viewController.modalTransitionStyle, UIModalTransitionStyle.crossDissolve)
-            XCTAssertEqual(viewController.preferredContentSize.width, 100)
-            XCTAssertEqual(viewController.preferredContentSize.height, 100)
-            XCTAssertEqual(viewController.isModalInPresentation, true)
-            XCTAssertTrue(viewController.transitioningDelegate === transitionDelegate)
-            if case .failure = result {
-                XCTAssert(false)
-            }
-        })
+                                     })
+                                     .perform(with: viewController, on: PresentingModallyController(), animated: true, completion: { result in
+                                         wasInCompletion = true
+                                         XCTAssertEqual(viewController.modalPresentationStyle, UIModalPresentationStyle.pageSheet)
+                                         XCTAssertEqual(viewController.modalTransitionStyle, UIModalTransitionStyle.crossDissolve)
+                                         XCTAssertEqual(viewController.preferredContentSize.width, 100)
+                                         XCTAssertEqual(viewController.preferredContentSize.height, 100)
+                                         XCTAssertEqual(viewController.isModalInPresentation, true)
+                                         XCTAssertTrue(viewController.transitioningDelegate === transitionDelegate)
+                                         if case .failure = result {
+                                             XCTAssert(false)
+                                         }
+                                     })
         XCTAssertTrue(wasInCompletion)
         XCTAssertTrue(wasInSheetPresentationConfig)
 
@@ -277,7 +280,7 @@ class ActionTests: XCTestCase {
     }
 
     func testPushReplacingLastAction() throws {
-        var viewControllerStack: [UIViewController] = []
+        var viewControllerStack = [UIViewController]()
         UINavigationController.pushReplacingLast().perform(embedding: UIViewController(), in: &viewControllerStack)
         XCTAssertEqual(viewControllerStack.count, 1)
 
@@ -298,7 +301,7 @@ class ActionTests: XCTestCase {
     }
 
     func testPushAsRootAction() throws {
-        var viewControllerStack: [UIViewController] = []
+        var viewControllerStack = [UIViewController]()
         UINavigationController.pushAsRoot().perform(embedding: UIViewController(), in: &viewControllerStack)
         XCTAssertEqual(viewControllerStack.count, 1)
 
@@ -321,7 +324,7 @@ class ActionTests: XCTestCase {
     }
 
     func testPushAction() throws {
-        var viewControllerStack: [UIViewController] = []
+        var viewControllerStack = [UIViewController]()
         UINavigationController.push().perform(embedding: UIViewController(), in: &viewControllerStack)
         XCTAssertEqual(viewControllerStack.count, 1)
 
@@ -346,7 +349,7 @@ class ActionTests: XCTestCase {
     }
 
     func testAddTabAction() throws {
-        var viewControllerStack: [UIViewController] = []
+        var viewControllerStack = [UIViewController]()
         UITabBarController.add().perform(embedding: UIViewController(), in: &viewControllerStack)
         XCTAssertEqual(viewControllerStack.count, 1)
 
@@ -371,7 +374,7 @@ class ActionTests: XCTestCase {
     }
 
     func testAddTabActionAtIndex() throws {
-        var viewControllerStack: [UIViewController] = []
+        var viewControllerStack = [UIViewController]()
         UITabBarController.add(at: 1).perform(embedding: UIViewController(), in: &viewControllerStack)
         XCTAssertEqual(viewControllerStack.count, 1)
 
@@ -396,7 +399,7 @@ class ActionTests: XCTestCase {
     }
 
     func testAddTabActionReplacingAtIndex() throws {
-        var viewControllerStack: [UIViewController] = []
+        var viewControllerStack = [UIViewController]()
         UITabBarController.add(at: 1, replacing: true).perform(embedding: UIViewController(),
                                                                in: &viewControllerStack)
         XCTAssertEqual(viewControllerStack.count, 1)
@@ -422,7 +425,7 @@ class ActionTests: XCTestCase {
     }
 
     func testSetAsMasterAction() {
-        var viewControllerStack: [UIViewController] = []
+        var viewControllerStack = [UIViewController]()
         try? UISplitViewController.setAsMaster().perform(embedding: UIViewController(), in: &viewControllerStack)
         XCTAssertEqual(viewControllerStack.count, 1)
 
@@ -449,7 +452,7 @@ class ActionTests: XCTestCase {
     }
 
     func testPushToDetailsAction() {
-        var viewControllerStack: [UIViewController] = []
+        var viewControllerStack = [UIViewController]()
         XCTAssertThrowsError(try UISplitViewController.pushToDetails().perform(embedding: UIViewController(), in: &viewControllerStack))
 
         viewControllerStack.append(UIViewController())
@@ -488,7 +491,7 @@ class ActionTests: XCTestCase {
     }
 
     func testPushOnToDetailsAction() {
-        var viewControllerStack: [UIViewController] = []
+        var viewControllerStack = [UIViewController]()
         XCTAssertThrowsError(try UISplitViewController.pushOnToDetails().perform(embedding: UIViewController(), in: &viewControllerStack))
 
         viewControllerStack.append(UIViewController())

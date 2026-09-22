@@ -1,31 +1,33 @@
-// swift-tools-version: 6.1
+// swift-tools-version: 6.3
 
 import PackageDescription
 
 let package = Package(
     name: "RouteComposer",
     platforms: [
-        .iOS("15.0")
+        .iOS(.v15)
     ],
     products: [
         .library(
             name: "RouteComposer",
             targets: ["RouteComposer"]),
-        .library(name: "RouteComposerStatic",
-                 type: .static,
-                 targets: ["RouteComposer"]),
-        .library(name: "RouteComposerDynamic",
-                 type: .dynamic,
-                 targets: ["RouteComposer"])
+        .library(
+            name: "RouteComposerStatic",
+            type: .static,
+            targets: ["RouteComposer"]),
+        .library(
+            name: "RouteComposerDynamic",
+            type: .dynamic,
+            targets: ["RouteComposer"])
     ],
     targets: [
         .target(
             name: "RouteComposer",
-            dependencies: [],
             path: "RouteComposer/Classes"),
         .testTarget(
             name: "RouteComposerTests",
             dependencies: ["RouteComposer"],
-            path: "Example/Tests")
+            path: "Example/Tests",
+            exclude: ["Info.plist"])
     ],
-    swiftLanguageModes: [.version("6.2")])
+    swiftLanguageModes: [.version("6.3")])

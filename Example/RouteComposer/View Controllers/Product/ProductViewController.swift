@@ -16,29 +16,29 @@ import UIKit
 
 struct ProductContext {
 
-    let productId: String
+    let productID: String
 
     let productURL: URL?
 
-    init(productId: String, productURL: URL? = nil) {
-        self.productId = productId
+    init(productID: String, productURL: URL? = nil) {
+        self.productID = productID
         self.productURL = productURL
     }
 }
 
 class ProductViewController: UIViewController, ExampleAnalyticsSupport, ContextAccepting {
 
-    let screenType = ExampleScreenTypes.product
+    let screenType: ExampleScreenTypes = .product
 
     typealias Model = String
 
-    private(set) var productId: Model? {
+    private(set) var productID: Model? {
         didSet {
             reloadData()
         }
     }
 
-    @IBOutlet private var productIdLabel: UILabel!
+    @IBOutlet private var productIDLabel: UILabel!
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -50,11 +50,11 @@ class ProductViewController: UIViewController, ExampleAnalyticsSupport, ContextA
     }
 
     func setup(with context: ProductContext) throws {
-        productId = context.productId
+        productID = context.productID
     }
 
     class func checkCompatibility(with context: Context) throws {
-        if context.productId.isEmpty {
+        if context.productID.isEmpty {
             throw RoutingError.generic(.init("ProductId can not be empty."))
         }
     }
@@ -68,10 +68,10 @@ class ProductViewController: UIViewController, ExampleAnalyticsSupport, ContextA
             return
         }
 
-        productIdLabel.text = productId
-        if let productId {
-            view.accessibilityIdentifier = "productViewController+\(productId)"
-            title = "Product \(productId)"
+        productIDLabel.text = productID
+        if let productID {
+            view.accessibilityIdentifier = "productViewController+\(productID)"
+            title = "Product \(productID)"
         } else {
             view.accessibilityIdentifier = "productViewController"
             title = "Product"
@@ -87,7 +87,7 @@ class ProductViewController: UIViewController, ExampleAnalyticsSupport, ContextA
     }
 
     @IBAction func goToProductTapped() {
-        try? router.navigate(to: ProductConfiguration.productScreen, with: ProductContext(productId: "01"))
+        try? router.navigate(to: ProductConfiguration.productScreen, with: ProductContext(productID: "01"))
     }
 
     @IBAction func goToSwiftUITapped() {
@@ -95,12 +95,12 @@ class ProductViewController: UIViewController, ExampleAnalyticsSupport, ContextA
     }
 
     @IBAction func goToProductFromCircleTapped() {
-        guard let productId,
-              var productIdAsInt = Int(productId) else {
+        guard let productID,
+              var productIDAsInt = Int(productID) else {
             return
         }
-        productIdAsInt = productIdAsInt < 9 ? productIdAsInt + 1 : 0
-        try? router.navigate(to: ProductConfiguration.productScreenFromCircle, with: ProductContext(productId: "0\(productIdAsInt)"))
+        productIDAsInt = productIDAsInt < 9 ? productIDAsInt + 1 : 0
+        try? router.navigate(to: ProductConfiguration.productScreenFromCircle, with: ProductContext(productID: "0\(productIDAsInt)"))
     }
 
     @IBAction func goHome() {
@@ -116,7 +116,7 @@ class ProductViewController: UIViewController, ExampleAnalyticsSupport, ContextA
 extension ProductViewController: ContextChecking {
 
     func isTarget(for context: ProductContext) -> Bool {
-        productId == context.productId
+        productID == context.productID
     }
 
 }

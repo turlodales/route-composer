@@ -50,5 +50,7 @@ public extension InstanceFinder {
     ///
     /// - Parameters:
     ///   - instance: The `UIViewController` instance that `Finder` should provide to the `Router`
-    static func instanceFinder(instance: VC) -> Self { Self(instance: instance) }
+    static func instanceFinder(instance: VC) -> Self {
+        Self(instance: instance)
+    }
 }

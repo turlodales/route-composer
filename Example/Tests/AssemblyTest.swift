@@ -235,7 +235,8 @@ class AssemblyTest: XCTestCase {
                     .using(.present)
                     .from(.current)
                     .assemble()
-            }).getPreviousStep(with: AnyContextBox("context")) as? SwitcherStep
+            })
+            .getPreviousStep(with: AnyContextBox("context")) as? SwitcherStep
 
         XCTAssertNotNil(step)
         XCTAssertEqual(step?.resolvers.count, 7)

@@ -37,5 +37,5 @@
 --xcodeindentation enabled
 --modifierorder public,final,override
 --disable blankLinesAtEndOfScope,blankLinesAtStartOfScope,redundantReturn,wrapMultilineStatementBraces
---enable isEmpty
+--enable isEmpty,noExplicitOwnership,wrapEnumCases,wrapSwitchCases,sortSwitchCases,wrapAttributes,acronyms,preferContains,preferCountWhere,preferFirstWhere,preferFlatMap,propertyTypes,redundantSendable,singlePropertyPerLine,wrapCaseBodies,wrapGuardStatementBodies,wrapMultilineFunctionChains,wrapIfStatementBodies,wrapGuardStatementBodies,wrapIfExpressionBodies,preferLazyMap,preferMinOverSorted
 --exclude Pods,docs,Example/Pods

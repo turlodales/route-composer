@@ -16,9 +16,9 @@ import UIKit
 
 class WishListViewController: UITableViewController, ExampleAnalyticsSupport {
 
-    var screenType = ExampleScreenTypes.favorites
+    var screenType: ExampleScreenTypes = .favorites
 
-    var segmentController = UISegmentedControl(items: ["Favorites", "Collections"])
+    var segmentController: UISegmentedControl = .init(items: ["Favorites", "Collections"])
 
     var context: WishListContext = .favorites {
         didSet {

@@ -47,13 +47,13 @@ class CitiesConfiguration {
         .assemble()
 
     @MainActor
-    static func citiesList(cityId: Int? = nil) -> Destination<CitiesTableViewController, String?> {
-        Destination(to: citiesList, with: cityId.flatMap { "\($0)" } ?? nil)
+    static func citiesList(cityID: Int? = nil) -> Destination<CitiesTableViewController, String?> {
+        Destination(to: citiesList, with: cityID.flatMap { "\($0)" } ?? nil)
     }
 
     @MainActor
-    static func cityDetail(cityId: Int) -> Destination<CityDetailViewController, Int> {
-        Destination(to: cityDetails, with: cityId)
+    static func cityDetail(cityID: Int) -> Destination<CityDetailViewController, Int> {
+        Destination(to: cityDetails, with: cityID)
     }
 
 }

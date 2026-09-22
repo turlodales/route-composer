@@ -13,13 +13,13 @@
 import Foundation
 import UIKit
 
-// Chainable step.
-// Identifies that the step can be a part of the chain,
-// e.g. when it comes to the presentation of multiple view controllers to reach destination.
+/// Chainable step.
+/// Identifies that the step can be a part of the chain,
+/// e.g. when it comes to the presentation of multiple view controllers to reach destination.
 @MainActor
 protocol ChainableStep {
 
-    // `RoutingStep` to be made by a `Router` before getting to this step.
+    /// `RoutingStep` to be made by a `Router` before getting to this step.
     func getPreviousStep(with context: AnyContext) -> RoutingStep?
 
 }

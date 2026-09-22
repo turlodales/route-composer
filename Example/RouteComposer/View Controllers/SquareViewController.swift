@@ -15,7 +15,7 @@ import UIKit
 
 class SquareViewController: UIViewController, ExampleAnalyticsSupport {
 
-    let screenType = ExampleScreenTypes.square
+    let screenType: ExampleScreenTypes = .square
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -47,7 +47,7 @@ class SquareViewController: UIViewController, ExampleAnalyticsSupport {
     }
 
     @IBAction func goEmptyAndProductTapped() {
-        try? router.navigate(to: ConfigurationHolder.configuration.figuresAndProductScreen, with: ProductContext(productId: "03"))
+        try? router.navigate(to: ConfigurationHolder.configuration.figuresAndProductScreen, with: ProductContext(productID: "03"))
     }
 
     @IBAction func switchValueChanged(sender: UISwitch) {

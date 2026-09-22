@@ -75,7 +75,9 @@ public extension ClassFinder {
     }
 
     /// A default implementation of the view controllers finder that searches for a view controller by its name.
-    static var classFinder: Self { .classFinder() }
+    static var classFinder: Self {
+        .classFinder()
+    }
 
     /// A default implementation of the view controllers finder that searches for a view controller by its name.
     ///

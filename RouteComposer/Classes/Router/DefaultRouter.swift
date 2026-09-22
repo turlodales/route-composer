@@ -222,9 +222,9 @@ public struct DefaultRouter: InterceptableRouter {
         }
     }
 
-    // Loops through the list of factories and builds their view controllers in sequence.
-    // Some actions can be asynchronous, like push, modal or presentations,
-    // so it performs them asynchronously
+    /// Loops through the list of factories and builds their view controllers in sequence.
+    /// Some actions can be asynchronous, like push, modal or presentations,
+    /// so it performs them asynchronously
     private func buildViewControllerStack(starting rootViewController: UIViewController,
                                           using factories: [(factory: AnyFactory, context: AnyContext)],
                                           animated: Bool,
